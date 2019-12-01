@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-package org.integrational.helidon.hellomp.api;
+package org.integrational.helidon.hellomp;
+
+import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
+import org.eclipse.microprofile.openapi.annotations.info.Info;
+import org.integrational.helidon.hellomp.apiimpl.GreetResourceImpl;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.Set;
 
-@ApplicationScoped
+// TODO: can't find any other place (such as in api package) where this annotation works!
+@OpenAPIDefinition(info = @Info(title = "Hello MicroProfile API", version = "0.1"))
 @ApplicationPath("/")
-public class GreetApplication extends Application {
+@ApplicationScoped
+public class APIImpl extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-        return Set.of(GreetResource.class);
+        return Set.of(GreetResourceImpl.class);
     }
 }

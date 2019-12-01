@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.integrational.helidon.hellomp.api;
+package org.integrational.helidon.hellomp.apiimpl;
 
 import io.helidon.microprofile.server.RoutingPath;
 import io.helidon.security.SecurityContext;

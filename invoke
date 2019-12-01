@@ -4,6 +4,10 @@ echo "Invoking service on $base"
 
 c="curl -iw ""\n\n"" "
 
+echo "OpenAPI Spec:"
+$c $base/openapi
+
+echo "API resources:"
 $c $base/greet
 $c $base/greet/Gerald
 $c -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Seavas"}' $base/greet/greeting
