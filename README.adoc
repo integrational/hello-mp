@@ -1,0 +1,44 @@
+= Helidon and MicroProfile 3.2 Notes
+
+Bootstrap project:
+
+[source,bash]
+----
+mvn archetype:generate -DinteractiveMode=false \
+    -DarchetypeGroupId=io.helidon.archetypes \
+    -DarchetypeArtifactId=helidon-quickstart-mp \
+    -DarchetypeVersion=1.4.0 \
+    -DgroupId=org.integrational.helidon \
+    -DartifactId=hello-mp \
+    -Dpackage=org.integrational.helidon.hellomp
+----
+
+Build and run locally:
+
+[source,bash]
+----
+mvn clean package
+java -jar target/hello-mp.jar
+
+./invoke
+----
+
+Docker build and run:
+
+[source,bash]
+----
+./build-docker
+./run-docker
+
+./invoke
+----
+
+Run on Kubernetes:
+
+[source,bash]
+----
+./build-docker
+./run-k8s
+
+./invoke <NodePort service port>
+----
