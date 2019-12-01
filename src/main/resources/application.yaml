@@ -1,0 +1,6 @@
+app:
+  greeting: Howdy
+
+# Microprofile server properties
+server:
+  port: 8080

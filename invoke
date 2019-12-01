@@ -1,0 +1,18 @@
+port=${1:-8080}
+base="http://localhost:$port"
+echo "Invoking service on $base"
+
+c="curl -iw ""\n\n"" "
+
+$c $base/greet
+$c $base/greet/Gerald
+$c -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Seavas"}' $base/greet/greeting
+$c $base/greet/Gerald
+
+echo "Health:"
+$c $base/health
+
+echo "Metrics:"
+$c $base/metrics
+echo "Metrics in JSON format:"
+$c -H 'Accept: application/json' $base/metrics

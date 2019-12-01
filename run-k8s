@@ -1,0 +1,8 @@
+echo "Pushing Docker img to repo"
+docker push integrational/hello-mp
+
+echo "Applying k8s resources"
+kubectl apply -f app.yaml
+
+echo "K8s Service:"
+kubectl get service/hello-mp
